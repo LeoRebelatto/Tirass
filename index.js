@@ -6,7 +6,7 @@ app.get('/', (function(req,res) {
     res.sendFile(__dirname + '/smultimidia.html');
 }));
 
-app.use(express.static('img'));
+app.use('/img', express.static('img'));
 
 app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'));
