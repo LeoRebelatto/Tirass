@@ -1,6 +1,6 @@
 const express = require('express'); 
 
-var secure = require('express-sslify');
+var enforce = require('express-sslify');
 
 const app = express(); 
 
