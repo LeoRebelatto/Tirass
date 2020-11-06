@@ -56,7 +56,7 @@
                 for(i in response['clips']){
                     $('#clips').append(
                         $('<iframe>')
-                            .attr('src',response['clips'][i].embed_url+'&parent=twitch.tv')
+                            .attr('src',response['clips'][i].embed_url+'&parent=tirass.herokuapp.com')
                     );
                 }
                 
