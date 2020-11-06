@@ -57,6 +57,8 @@
                     $('#clips').append(
                         $('<iframe>')
                             .attr('src',response['clips'][i].embed_url+'&parent=tirass.herokuapp.com')
+                            .attr('height', '400px')
+                            .attr('width', '600px')
                     );
                 }
                 

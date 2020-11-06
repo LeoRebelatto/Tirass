@@ -4,7 +4,7 @@ body, html{
 }
 
 .bg{
-    background-image: url("img/fundo2.png");
+    background-image: url("fundo2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
