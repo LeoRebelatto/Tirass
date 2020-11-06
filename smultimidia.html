@@ -13,8 +13,8 @@
 <body class="bg">
     <nav id="menu">
         <ul>
-            <li><a href="#"><img src="img/logo.png"></a></li>
-            <li><a href="#">Mais Vistos</a></li>
+            <li><a href="/"><img src="img/logo.png"></a></li>
+            <li><span id="maisVistos" style="cursor: pointer;" data-nome-jogo="">Mais Vistos</span></li>
         </ul>
     </nav>
 
@@ -37,10 +37,11 @@
     </div>
     <script>
         $('.container .card').click(APIcall);
+        $("#maisVistos").click(APIcall);
         
         function APIcall(){
             var settings = {
-                "url": "https://api.twitch.tv/kraken/clips/top?game="+$(this).attr("data-nome-jogo")+"&period=month&trending=true&limit=20",
+                "url": "https://api.twitch.tv/kraken/clips/top?game="+$(this).attr("data-nome-jogo")+"&language=pt,br&period=month&trending=true&limit=20",
                 "method": "GET",
                 "timeout": 0,
                 "headers": {
