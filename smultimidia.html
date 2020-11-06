@@ -18,7 +18,7 @@
         </ul>
     </nav>
 
-    <div class="container">
+    <div class="container" id= 'cards'>
         <div class="card" id="cardLoL" data-nome-jogo="League of Legends"><img src="img/lol.png" alt="League of Legends"></div>
         <div class="card" id="cardFallGuys" data-nome-jogo="Fall Guys"><img src="img/fallguys.png" alt="Fall Guys"></div>
         <div class="card" id="cardCoD" data-nome-jogo="Warzone"><img src="img/warzone.png" alt="Call Of Duty Warzone"></div>
@@ -31,6 +31,9 @@
         <div class="card" id="cardMinecraft" data-nome-jogo="Minecraft"><img src="img/Minecraft.png" alt="Minecraft"></div>
         <div class="card" id="cardTFT" data-nome-jogo="Teamfight Tactics"><img src="img/tft.png" alt="TeamFight Tactics"></div>
         <div class="card" id="cardOthers" data-nome-jogo=""><img src="img/outros.png" alt="Outros"></div>
+    </div>
+    <div id= 'clips' style="display: none;">
+
     </div>
     <script>
         $('.container .card').click(APIcall);
@@ -48,6 +51,15 @@
 
             $.ajax(settings).done(function (response) {
                 console.log(response);
+                $('#cards').hide();
+                $('#clips').show();
+                for(i in response['clips']){
+                    $('#clips').append(
+                        $('<iframe>')
+                            .attr('src',response['clips'][i].embed_url+'&parent=twitch.tv')
+                    );
+                }
+                
             });
         }
     </script>
