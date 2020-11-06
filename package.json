@@ -10,7 +10,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-      "express-force-https":"^1.0.0",
+      "express-sslify":"^1.2.0",
       "ejs": "^3.1.5",
       "express": "^4.17.1",
       "jquery": "^3.5.1"
