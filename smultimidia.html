@@ -53,6 +53,7 @@
                 },
             };
 
+            $('#clips').html("")
             $.ajax(settings).done(function (response) {
                 console.log(response);
                 $('#cards').hide();
@@ -94,7 +95,7 @@
     }
 
     #buscarjogo{
-    width: 100%;
+    width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
