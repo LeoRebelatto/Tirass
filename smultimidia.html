@@ -16,7 +16,7 @@
             <li><a href="/"><img src="img/logo.png"></a></li>
             <li><span id="maisVistos" style="cursor: pointer;" data-nome-jogo="">Mais Vistos</span></li>
             <li><input type="text" id="buscarjogo" name=""></li>
-            <li><input type="button" id="botaopesquisar" onclick="buscarJogo()" name=""></li>
+            <li><span type="button" id="botaopesquisar" onclick="buscarJogo()" name="">Pesquisar</span></li>
         </ul>
     </nav>
 
@@ -44,7 +44,7 @@
         
         function APIcall(nomejogo){
             var settings = {
-                "url": "https://api.twitch.tv/kraken/clips/top?game="+ nomejogo + "&language=pt,br&period=month&trending=true&limit=20",
+                "url": "https://api.twitch.tv/kraken/clips/top?game="+ nomejogo + "&language=pt,br&period=year&trending=true&limit=20",
                 "method": "GET",
                 "timeout": 0,
                 "headers": {
@@ -80,7 +80,7 @@
 
 </body>
 <style>
-    #maisVistos{
+    #maisVistos,#botaopesquisar{
     background-color: white;
   border: none;
   color: rgb(242, 23, 66);
@@ -104,18 +104,5 @@
   box-sizing: border-box;
     }
 
-    #botaopesquisar{
-background-color: white;
-  border: none;
-  color: rgb(242, 23, 66);
-  font-weight: bold;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-    }
 </style>
 </html>
