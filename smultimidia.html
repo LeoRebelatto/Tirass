@@ -16,7 +16,7 @@
             <li><a href="/"><img src="img/logo.png"></a></li>
             <li><span id="maisVistos" style="cursor: pointer;" data-nome-jogo="">Mais Vistos</span></li>
             <li><input type="text" id="buscarjogo" name=""></li>
-            <li><input type="button" id="botaopesquisar" onclick="buscarJogo()" name=""></li>
+            <li><span type="button" id="botaopesquisar" onclick="buscarJogo()" name="">Pesquisar</span></li>
         </ul>
     </nav>
 
@@ -44,7 +44,7 @@
         
         function APIcall(nomejogo){
             var settings = {
-                "url": "https://api.twitch.tv/kraken/clips/top?game="+ nomejogo + "&language=pt,br&period=month&trending=true&limit=20",
+                "url": "https://api.twitch.tv/kraken/clips/top?game="+ nomejogo + "&language=pt,br&period=year&trending=true&limit=20",
                 "method": "GET",
                 "timeout": 0,
                 "headers": {
@@ -53,6 +53,7 @@
                 },
             };
 
+            $('#clips').html("")
             $.ajax(settings).done(function (response) {
                 console.log(response);
                 $('#cards').hide();
@@ -94,7 +95,7 @@
     }
 
     #buscarjogo{
-    width: 100%;
+    width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
