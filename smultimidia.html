@@ -15,6 +15,8 @@
         <ul>
             <li><a href="/"><img src="img/logo.png"></a></li>
             <li><span id="maisVistos" style="cursor: pointer;" data-nome-jogo="">Mais Vistos</span></li>
+            <li><input type="text" id="buscarjogo" name=""></li>
+            <li><input type="button" onclick="buscarJogo()" name=""></li>
         </ul>
     </nav>
 
@@ -36,12 +38,13 @@
 
     </div>
     <script>
-        $('.container .card').click(APIcall);
-        $("#maisVistos").click(APIcall);
+
+        $('.container .card').click(function(){APIcall($(this).attr("data-nome-jogo"))});
+        $("#maisVistos").click(function(){APIcall($(this).attr("data-nome-jogo"))});
         
-        function APIcall(){
+        function APIcall(nomejogo){
             var settings = {
-                "url": "https://api.twitch.tv/kraken/clips/top?game="+$(this).attr("data-nome-jogo")+"&language=pt,br&period=month&trending=true&limit=20",
+                "url": "https://api.twitch.tv/kraken/clips/top?game="+ nomejogo + "&language=pt,br&period=month&trending=true&limit=20",
                 "method": "GET",
                 "timeout": 0,
                 "headers": {
@@ -65,9 +68,19 @@
                 }
                 
             });
+
         }
+
+        function buscarJogo(){
+            APIcall($("#nomejogo").val())
+        }
+
     </script>
 
 </body>
-
+<style>
+	#maisVistos{
+		
+	}
+</style>
 </html>
