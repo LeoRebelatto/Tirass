@@ -13,7 +13,7 @@
 <body class="bg">
     <nav id="menu">
         <ul>
-            <li><a href="/"><img src="img/logo.png"></a></li>
+            <li><a href="/"><img id="imagemlogo" src="img/logo.png"></a></li>
             <li><span id="maisVistos" style="cursor: pointer;" data-nome-jogo="">Mais Vistos</span></li>
             <li><input type="text" id="buscarjogo" value="Buscar melhores clipes do mês"></li>
             <li><span type="button" id="botaopesquisar" onclick="buscarJogo()" name="">Pesquisar</span></li>
@@ -105,5 +105,13 @@
   box-sizing: border-box;
     }
 
+
+    #imagemlogo{
+        width: 29px;
+        height: : 29px;
+        display: flex;
+  align-items: center;
+  justify-content: center
+    }
 </style>
 </html>
