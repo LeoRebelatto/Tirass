@@ -16,7 +16,7 @@
             <li><a href="/"><img src="img/logo.png"></a></li>
             <li><span id="maisVistos" style="cursor: pointer;" data-nome-jogo="">Mais Vistos</span></li>
             <li><input type="text" id="buscarjogo" name=""></li>
-            <li><input type="button" onclick="buscarJogo()" name=""></li>
+            <li><input type="button" id="botaopesquisar" onclick="buscarJogo()" name=""></li>
         </ul>
     </nav>
 
@@ -72,15 +72,49 @@
         }
 
         function buscarJogo(){
-            APIcall($("#nomejogo").val())
+            APIcall($("#buscarjogo").val())
         }
 
     </script>
 
 </body>
 <style>
-	#maisVistos{
-		
-	}
+    #maisVistos{
+    background-color: white;
+  border: none;
+  color: rgb(242, 23, 66);
+  font-weight: bold;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+    }
+
+    #buscarjogo{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+    }
+
+    #botaopesquisar{
+background-color: white;
+  border: none;
+  color: rgb(242, 23, 66);
+  font-weight: bold;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+    }
 </style>
 </html>
